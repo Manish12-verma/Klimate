@@ -1,18 +1,22 @@
 import './App.css'
-import { Button } from "@/components/ui/button"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Layout from './components/ui/layout';
+import { ThemeProvider } from './context/theme-provider';
+import WeatherDashboard from './pages/WeatherDashboard';
+import CityPage from './pages/CityPage';
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh ">
-      
-    </div>
+    <BrowserRouter>
+    <ThemeProvider defaultTheme='dark'>
+        <Layout >
+         <Routes>
+           <Route path='/' element={<WeatherDashboard/>}></Route>
+           <Route path='/city/:cityName' element={<CityPage/>}></Route>
+         </Routes>
+        </Layout>
+   </ThemeProvider>   
+    </BrowserRouter>
   )
 }
 
