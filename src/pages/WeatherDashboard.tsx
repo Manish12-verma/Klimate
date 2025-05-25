@@ -10,6 +10,7 @@ import {
   AlertTitle,
 } from "@/components/ui/alert"
 import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from "@/hooks/UseWeather";
+import CurrentWeather from "@/components/CurrentWeather";
 
 
 const WeatherDashboard = () => {
@@ -99,7 +100,16 @@ const weatherQuery = useWeatherQuery(coordinates);
           <RefreshCw className={`h-4 w-4 ${weatherQuery.isFetching ? "animate-spin":""}`}/>
         </Button>
       </div>
-           {/* current and hourly weather data will be displayed here */}
+           <div className="grid gap-6">
+              <div>
+                <CurrentWeather data={weatherQuery.data} locationName={locationName}/>
+              {/* current weather and hourly temp */}
+              </div>
+              <div>
+                {/* details */}
+              {/* daily forecast */}
+              </div>
+           </div>
     </div>
   )
 }
