@@ -54,11 +54,11 @@ const HourlyTemp = ({ data }: HourlyTempProps) => {
                         </div>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="font-medium">Temperature:</span>
+                            <span className="font-medium text-muted-foreground">Temperature:</span>
                             <span className="font-bold">{payload[0].value}°</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-medium">Feels Like :</span>
+                            <span className="font-medium text-muted-foreground">Feels Like :</span>
                             <span className="font-bold">{payload[1].value}°</span>
                           </div>
                         </div>
