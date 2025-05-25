@@ -3,23 +3,20 @@ import {  MoonIcon, SunIcon } from "lucide-react";
 import { Link } from "react-router-dom"
 
 const Header = () => {
-    
     const {theme,setTheme} = useTheme();
     const isDark = theme === "dark";
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur py-2 supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className="container mx-auto flex h-16 items-center justify-between px-10">
             <Link to={"/"}>
              <img src={isDark? "/logo.png":"/logo2.png"} alt="Klimate logo" className="h-14"/>
             </Link> 
-            
             <div>
                 {/*search*/}
                 {/*theme toggle*/}
                 <div onClick={()=> setTheme(isDark ? "light" : "dark")} className={`flex items-center cursor-pointer transition-transform duration-500 ${isDark ? "rotate-180" : "rotate-0"}`}> 
                   {isDark?(<SunIcon className="h-6 w-6 text-yellow-500 rotate-0 tracking-all"/>):
-                  (<MoonIcon className="h-6 w-6 text-gray-800 rotate-0 tracking-all"/>)}
+                  (<MoonIcon className="h-6 w-6 text-blue-500  rotate-0 tracking-all"/>)}
                 </div>
             </div>
         </div>

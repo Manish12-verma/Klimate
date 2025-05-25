@@ -2,7 +2,7 @@
 const WeatherDashboard = () => {
   return (
     <div>
-       weather dashboard
+       Weather dashboard
     </div>
   )
 }
