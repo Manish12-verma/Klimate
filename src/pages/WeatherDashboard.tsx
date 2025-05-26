@@ -12,6 +12,8 @@ import {
 import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from "@/hooks/UseWeather";
 import CurrentWeather from "@/components/CurrentWeather";
 import HourlyTemp from "@/components/HourlyTemp";
+import WeatherDetails from "@/components/WeatherDetails";
+import WeatherForecast from "@/components/WeatherForecast";
 
 
 const WeatherDashboard = () => {
@@ -106,9 +108,10 @@ const weatherQuery = useWeatherQuery(coordinates);
                 <CurrentWeather data={weatherQuery.data} locationName={locationName}/>
                 <HourlyTemp data={forecastQuery.data}/>
               </div>
-              <div>
-                {/* details */}
+              <div className="flex flex-col lg:flex-row gap-4">
+                <WeatherDetails data={weatherQuery.data}/>
               {/* daily forecast */}
+              <WeatherForecast/>
               </div>
            </div>
     </div>
