@@ -38,7 +38,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
             color:"text-blue-500",
         },
         {
-            title:"Wind directoion",
+            title:"Wind direction",
             value:`${getWindDirection(wind.deg)} (${wind.deg}°)`,
             icon:Compass,
             color:"text-green-500",
@@ -50,6 +50,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
           color:"text-purple-500",
         }
     ]
+
   return (
     <Card>
   <CardHeader>
