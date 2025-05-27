@@ -28,7 +28,7 @@ const CitySearch = () => {
           })
           //add to search history
           setOpen(false);
-          navigate(`/city/${name}??lat=${lat}&lon=${lon}` )
+          navigate(`/city/${name}?lat=${lat}&lon=${lon}` )
     }
 
   return ( 
