@@ -17,7 +17,7 @@ import { useLocationSearchQuery } from "@/hooks/UseWeather";
 import { useFavorite } from "@/hooks/useFavorite";
 import { useSearchHistory } from "@/hooks/useSearchHistory";
 
-export function CitySearch() {
+export default function CitySearch() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
