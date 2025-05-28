@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# Klimate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Klimate Preview](public\klimate.png)
 
-Currently, two official plugins are available:
+A modern weather app built with React, TypeScript, Tailwind CSS, Shadcn UI, TanStack Query, and Recharts. It displays real-time weather updates and visual insights through interactive charts, offering a clean, fast, and responsive user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** [https://klimate-demo.example.com](https://klimate-blond.vercel.app/)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Current Weather**: View up-to-date weather conditions for your current location or any searched city.
+- **Hourly & Daily Forecasts**: Get detailed hourly and daily weather forecasts.
+- **Favorite Cities**: Mark cities as favorites for quick access to their weather data.
+- **Location Detection**: Automatically detects your location (with permission) for local weather.
+- **Responsive UI**: Clean, modern, and responsive design.
+- **Error Handling**: User-friendly alerts for location or network errors.
+- **React Query**: Efficient data fetching and caching.
+- **Theming**: Dark mode support.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech Stack
+
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router](https://reactrouter.com/)
+- [React Query (TanStack Query)](https://tanstack.com/query/latest)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [Shadcn-UI](https://ui.shadcn.com/)
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone <your-repo-url>
+   cd Klimate
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+- `src/pages/` — Main pages (WeatherDashboard, CityPage)
+- `src/components/` — UI components (CurrentWeather, HourlyTemp, WeatherDetails, etc.)
+- `src/hooks/` — Custom React hooks (useGeoLocation, useWeather, etc.)
+- `src/context/` — Context providers (theme-provider)
+- `src/API/` — API utilities and types
+
+## Environment Variables
+
+You need to set up the following environment variables for the app to work correctly. Create a `.env` file in the root directory and add these lines:
+
+```
+VITE_OPENWEATHER_API_KEY =your_api_key
+VITE_OPENWEATHER_API_URL=your_api_url
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+We welcome contributions! If you'd like to add features, fix bugs, or improve documentation, please open a pull request:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Fork this repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch to your forked repository.
+5. Open a pull request to the `main` branch of this repository.
+
+Please ensure your code follows the existing style and passes all checks. Thank you for helping improve Klimate!
+
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+**Enjoy using Klimate!**
