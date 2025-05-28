@@ -1,5 +1,5 @@
 import CurrentWeather from "@/components/CurrentWeather";
-import FavoriteButton from "@/components/favoriteButton";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import HourlyTemp from "@/components/HourlyTemp";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
